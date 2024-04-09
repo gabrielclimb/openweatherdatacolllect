@@ -24,3 +24,11 @@ repos:
     rev: v2.1.1
     hooks:
       - id: conventional-pre-commit
+
+  - repo: local
+    hooks:
+      - id: pytest-check
+        language: system
+        name: pytest-check
+        entry: python -m pytest .
+        pass_filenames: false
