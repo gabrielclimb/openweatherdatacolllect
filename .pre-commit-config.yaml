@@ -30,5 +30,5 @@ repos:
       - id: pytest-check
         language: system
         name: pytest-check
-        entry: python -m pytest .
+        entry: python -m pytest --cov --cov-fail-under=70 .
         pass_filenames: false
