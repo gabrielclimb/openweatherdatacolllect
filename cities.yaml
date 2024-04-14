@@ -1,0 +1,17 @@
+Cities:
+  Sao Paulo:
+    Country: Brazil
+    lat: -23.5475000
+    long: -46.6361122
+  Lisbon:
+    Country: Portugal
+    lat: 38.7166667
+    long: -9.1333332
+  Porto:
+    Country: Portugal
+    lat: 41.1500000
+    long: -8.6166668
+  Zurich:
+    Country: Switzerland
+    lat: 47.3666667
+    long: 8.5500002
