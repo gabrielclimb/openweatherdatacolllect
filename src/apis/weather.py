@@ -33,15 +33,3 @@ class OpenWeather(APIBaseClass):
         response = self.get(url_current_weather, params=params)
 
         return WeatherResponse(**response.json())
-
-
-if __name__ == "__main__":
-    from dotenv import load_dotenv
-    import os
-
-    load_dotenv()
-
-    api_key = os.getenv("API_KEY")
-    api = OpenWeather(api_key=api_key)
-    ans = api.get_weather_by_coords(latitude=41.150, longitude=-8.6166668)
-    print(ans)
