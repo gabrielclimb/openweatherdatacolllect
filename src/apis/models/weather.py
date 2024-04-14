@@ -49,7 +49,7 @@ class Sys(BaseModel):
     sunset: int
 
 
-class WeatherData(BaseModel):
+class WeatherResponse(BaseModel):
     coord: Coord
     weather: List[Weather]
     base: str

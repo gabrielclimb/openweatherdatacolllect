@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from src.apis.models import WeatherData
+from src.apis.models import WeatherResponse
 
 
 def test_weather_data_model():
@@ -38,7 +38,7 @@ def test_weather_data_model():
         "cod": 200,
     }
 
-    weather = WeatherData(**full_json)
+    weather = WeatherResponse(**full_json)
 
     assert weather.snow.h3 == 6
     assert weather.rain.h1 == 3.16
@@ -76,4 +76,4 @@ def test_fail_parse_weather_data_model():
     }
 
     with pytest.raises(ValidationError):
-        _ = WeatherData(**full_json)
+        _ = WeatherResponse(**full_json)

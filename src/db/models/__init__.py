@@ -1,1 +1,1 @@
-from .weather_table import Cities  # noqa: F401
+from .tables import Cities  # noqa: F401

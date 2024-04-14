@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS cities (
     id SERIAL PRIMARY KEY,
-    city_name VARCHAR(255) NOT NULL,
+    city_name VARCHAR(255) NOT NULL PRIMARY KEY,
     country_name VARCHAR(255) NOT NULL,
     latitude DECIMAL(9, 7),
     longitude DECIMAL(10, 7)
