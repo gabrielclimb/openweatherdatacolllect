@@ -1,5 +1,5 @@
 from src.apis.weather import OpenWeather
-from src.models.api import WeatherData, Coord
+from src.apis.models import WeatherData, Coord
 
 
 def test_open_weather_api(mock_requests_get_current_weather):

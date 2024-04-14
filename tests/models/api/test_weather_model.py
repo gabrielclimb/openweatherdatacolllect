@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from src.models.api import WeatherData
+from src.apis.models import WeatherData
 
 
 def test_weather_data_model():

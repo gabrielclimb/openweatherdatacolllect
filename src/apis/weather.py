@@ -1,7 +1,7 @@
 from typing import Optional
 
 from src.apis.api_handler import APIBaseClass
-from src.models.api import WeatherData, Coord
+from src.apis.models import WeatherData, Coord
 
 
 class OpenWeather(APIBaseClass):
