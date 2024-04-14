@@ -13,7 +13,4 @@ COPY requirements.txt ./requirements.txt
 COPY Makefile ./Makefile
 RUN make pip-install
 
-
-FROM python as run-time
-
 CMD ["make"]
