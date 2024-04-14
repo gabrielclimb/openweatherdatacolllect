@@ -2,6 +2,18 @@ from unittest.mock import Mock, patch
 
 import pytest
 
+from src.apis.api_handler import APIBaseClass
+
+
+class MockAPI(APIBaseClass):
+    def re_auth(self):
+        self.session.headers.update({"Authorization": "Bearer newtoken"})
+
+
+@pytest.fixture
+def api_client():
+    return MockAPI(base_url="https://testing.api")
+
 
 @pytest.fixture
 def mock_requests_get_current_weather():

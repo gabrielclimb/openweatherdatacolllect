@@ -1,5 +1,6 @@
 from typing import Optional
-from src.helpers.api_handler import APIBaseClass
+
+from src.apis.api_handler import APIBaseClass
 from src.models.api import WeatherData
 
 
