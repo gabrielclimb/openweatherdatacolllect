@@ -35,5 +35,5 @@ CREATE TABLE IF NOT EXISTS weather_data (
     timezone INT,
     cod INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT fk_city FOREIGN KEY (city_id) REFERENCES cities (id)
+    CONSTRAINT fk_city FOREIGN KEY (city_id) REFERENCES city (id)
 );
