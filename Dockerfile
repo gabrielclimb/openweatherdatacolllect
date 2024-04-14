@@ -14,3 +14,7 @@ COPY Makefile ./Makefile
 RUN make pip-install
 
 CMD ["make"]
+
+
+FROM python
+RUN

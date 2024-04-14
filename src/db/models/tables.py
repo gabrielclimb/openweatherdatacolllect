@@ -4,10 +4,10 @@ from typing import Optional
 from sqlmodel import Field, SQLModel
 
 
-class Cities(SQLModel, table=True):
+class City(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
-    city_name: str
-    country_name: str
+    name: str
+    country: str
     latitude: float
     longitude: float
 
