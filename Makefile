@@ -10,3 +10,6 @@ run-scheduler:
 	PYTHONPATH=src python -m src.scheduler
 
 run-docker-ingestor:
+
+test:
+	python -m pytest --cov=src --cov-fail-under=70 tests
