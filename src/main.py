@@ -1,4 +1,5 @@
 import os
+import logging
 
 from dotenv import load_dotenv
 from sqlmodel import Session
@@ -11,12 +12,13 @@ from src.db.models.tables import WeatherData
 
 load_dotenv()
 
-API_KEY = os.getenv("API_KEY")
+logger = logging.getLogger(__name__)
 
-cities = get_all_cities()
+API_KEY = os.getenv("API_KEY")
 
 
 def ingest_weather_data():
+    cities = get_all_cities()
     api_weather = OpenWeather(API_KEY)
     session = Session(engine)
 
@@ -58,5 +60,10 @@ def ingest_weather_data():
         )
         session.add(w)
         session.commit()
+        print(f"Data for {city.city_name} ingested successfully.")
 
     session.close()
+
+
+if __name__ == "__main__":
+    ingest_weather_data()

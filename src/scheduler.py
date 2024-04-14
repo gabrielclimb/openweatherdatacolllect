@@ -1,7 +1,7 @@
 import sched
 import time
 import signal
-from src.data_collect import ingest_weather_data
+from src.main import ingest_weather_data
 
 scheduler = sched.scheduler(time.time, time.sleep)
 

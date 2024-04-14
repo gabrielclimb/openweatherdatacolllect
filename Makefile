@@ -8,3 +8,5 @@ run-ingestion:
 
 run-scheduler:
 	PYTHONPATH=src python -m src.scheduler
+
+run-docker-ingestor:
