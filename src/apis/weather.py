@@ -22,12 +22,14 @@ class OpenWeather(APIBaseClass):
         self, latitude: float, longitude: float, units: str = "metric"
     ) -> WeatherData:
         url_current_weather = "data/2.5/weather"
+
         params = {
             "lat": latitude,
             "lon": longitude,
             "appid": self.api_key,
             "units": units,
         }
+
         response = self.get(url_current_weather, params=params)
 
         return WeatherData(**response.json())
