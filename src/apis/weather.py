@@ -1,7 +1,7 @@
 from typing import Optional
 
 from src.apis.api_handler import APIBaseClass
-from src.models.api import WeatherData
+from src.models.api import WeatherData, Coord
 
 
 class OpenWeather(APIBaseClass):
@@ -18,14 +18,12 @@ class OpenWeather(APIBaseClass):
         super().__init__(self.base_url)
         self.api_key = api_key
 
-    def get_weather_by_coords(
-        self, latitude: float, longitude: float, units: str = "metric"
-    ) -> WeatherData:
+    def get_weather_by_coords(self, coord: Coord, units: str = "metric") -> WeatherData:
         url_current_weather = "data/2.5/weather"
 
         params = {
-            "lat": latitude,
-            "lon": longitude,
+            "lat": coord.lat,
+            "lon": coord.lon,
             "appid": self.api_key,
             "units": units,
         }

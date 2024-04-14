@@ -1,1 +1,1 @@
-from .weather import WeatherData  # noqa: F401
+from .weather import WeatherData, Coord  # noqa: F401
