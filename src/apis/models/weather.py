@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field
 
 
 class Coord(BaseModel):
-    lon: float
-    lat: float
+    longitude: float = Field(..., alias="lon")
+    latitude: float = Field(..., alias="lat")
 
 
 class Weather(BaseModel):

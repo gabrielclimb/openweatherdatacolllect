@@ -22,8 +22,8 @@ class OpenWeather(APIBaseClass):
         url_current_weather = "data/2.5/weather"
 
         params = {
-            "lat": coord.lat,
-            "lon": coord.lon,
+            "lat": coord.latitude,
+            "lon": coord.longitude,
             "appid": self.api_key,
             "units": units,
         }
