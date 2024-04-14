@@ -1,5 +1,6 @@
 from typing import Optional
 from src.helpers.api_handler import APIBaseClass
+from src.models.api import WeatherData
 
 
 class OpenWeather(APIBaseClass):
@@ -18,7 +19,7 @@ class OpenWeather(APIBaseClass):
 
     def get_weather_by_coords(
         self, latitude: float, longitude: float, units: str = "metric"
-    ):
+    ) -> WeatherData:
         url_current_weather = "data/2.5/weather"
         params = {
             "lat": latitude,
@@ -26,11 +27,11 @@ class OpenWeather(APIBaseClass):
             "appid": self.api_key,
             "units": units,
         }
-        _ = self.get(url_current_weather, params=params)
+        response = self.get(url_current_weather, params=params)
 
-        return self.get(url_current_weather, params=params)
+        return WeatherData(**response.json())
 
 
-api = OpenWeather(api_key="c2178e2c834d1048fffceb856ffae7bb")
-asn = api.get_weather_by_coords(latitude=41.150, longitude=-8.6166668)
-print(asn)
+# api = OpenWeather(api_key="c2178e2c834d1048fffceb856ffae7bb")
+# asn = api.get_weather_by_coords(latitude=41.150, longitude=-8.6166668)
+# print(asn)
