@@ -2,6 +2,7 @@ import sched
 import time
 import signal
 from src.main import ingest_weather_data
+from src.db.operations import load_cities_from_yaml
 
 scheduler = sched.scheduler(time.time, time.sleep)
 
@@ -15,6 +16,7 @@ def schedule_daily_task():
 
 def start_scheduled_task():
     scheduler.enter(0, 1, schedule_daily_task)
+    load_cities_from_yaml()
     try:
         scheduler.run()
     except KeyboardInterrupt:

@@ -10,11 +10,9 @@ RUN apt-get update \
 
 COPY src ./src
 COPY requirements.txt ./requirements.txt
+COPY cities.yaml ./cities.yaml
 COPY Makefile ./Makefile
+
 RUN make pip-install
 
 CMD ["make"]
-
-
-FROM python
-RUN

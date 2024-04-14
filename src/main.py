@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 API_KEY = os.getenv("API_KEY")
 
 
-def ingest_weather_data():
+def ingest_weather_data() -> None:
     cities = get_all_cities()
     api_weather = OpenWeather(API_KEY)
     session = Session(engine)
@@ -60,7 +60,7 @@ def ingest_weather_data():
         )
         session.add(w)
         session.commit()
-        print(f"Data for {city.city_name} ingested successfully.")
+        print(f"Data for {city.name} ingested successfully.")
 
     session.close()
 
