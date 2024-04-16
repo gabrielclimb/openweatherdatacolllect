@@ -1,18 +1,15 @@
 import os
-import logging
 
 from dotenv import load_dotenv
 from sqlmodel import Session
 
-
 from src.apis.weather import OpenWeather
-from src.db.operations import get_all_cities
 from src.db import engine
 from src.db.models.tables import WeatherData
+from src.db.operations import get_all_cities
 
 load_dotenv()
 
-logger = logging.getLogger(__name__)
 
 API_KEY = os.getenv("API_KEY")
 

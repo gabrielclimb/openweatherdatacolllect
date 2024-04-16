@@ -1,4 +1,7 @@
-@startuml flow
+@startuml sequence
+
+skinparam dpi 300
+
 actor User
 participant "Application" as App
 entity "Weather API" as API
