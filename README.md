@@ -60,20 +60,15 @@ pre-commit install
 ## Running the Application
 
 ### Using Docker Compose
-1. **Build and Start the Application**
+1. **Start the Application**
    ```bash
-   docker compose up --build
+   make run-scheduler
    ```
    This builds the application image, starts the database, runs migrations, and launches the application.
 
-2. **View Logs**
+2. **Stop the Application**
    ```bash
-   docker compose logs -f
-   ```
-
-3. **Stop the Application**
-   ```bash
-   docker compose down
+   make stop-scheduler
    ```
 
 ### Running the Application Locally (Without Docker)

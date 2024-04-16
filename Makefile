@@ -1,10 +1,18 @@
-.DEFAULT_GOAL := run-ingestion
+.DEFAULT_GOAL := run-schedule
+
+setup:
+	python -m venv .venv && \
+	. .venv/bin/activate && $(MAKE) pip-install
 
 pip-install:
+	pip install -U pip && \
 	pip install -r requirements.txt
 
 run-scheduler:
 	docker compose up
+
+stop-scheduler:
+	docker compose down
 
 run-local-ingestion:
 	docker compose up -d db migrate && PYTHONPATH=src python -m src.main

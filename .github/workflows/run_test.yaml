@@ -27,6 +27,6 @@ jobs:
         continue-on-error: true
       - name: Test with pytest
         run: |
-          python -m pytest --cov=src --cov-fail-under=70 tests
+          make test
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/weather
