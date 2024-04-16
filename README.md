@@ -11,8 +11,8 @@ This project is designed to collect weather data using the OpenWeatherMap API. I
 ## Prerequisites
 - Docker
 - Docker Compose
-- Python 3.8 or higher (for local setup without Docker)
-- Make (optional, for convenience)
+- Python 3.10 or higher
+- Make
 
 ## Configuration
 Create a `.env` file in the root directory of the project with the necessary environment variables:
