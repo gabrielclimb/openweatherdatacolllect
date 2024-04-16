@@ -47,7 +47,3 @@ def _load_cities_from_yaml(cities_data: dict, session: Session) -> list[City]:
         except IntegrityError:
             session.rollback()
             print(f"City '{city_name}' already exists. Skipping...")
-
-
-if __name__ == "__main__":
-    load_cities_from_yaml()

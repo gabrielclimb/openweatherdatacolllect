@@ -1,0 +1,20 @@
+@startuml flow
+actor User
+participant "Application" as App
+entity "Weather API" as API
+database "Weather Database" as DB
+
+User -> App : Start Application
+App -> DB : Load Cities Data from YAML
+App -> App : Schedule Daily Task
+
+loop Every 24 hours
+    App -> API : Fetch Weather Data
+    API -> App : Return Weather Data
+    App -> DB : Store Weather Data
+    App -> App : Reschedule Task
+end
+
+User -> App :  Stop Application\n(KeyboardInterrupt)
+
+@enduml

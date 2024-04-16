@@ -14,7 +14,7 @@ class APIBaseClass(ABC):
 
     def _create_session(self) -> requests.Session:
         session = requests.Session()
-        retries = Retry(total=5, backoff_factor=1, status_forcelist=[502, 503, 504])
+        retries = Retry(total=5, backoff_factor=2, status_forcelist=[502, 503, 504])
         session.mount("https://", HTTPAdapter(max_retries=retries))
         return session
 
