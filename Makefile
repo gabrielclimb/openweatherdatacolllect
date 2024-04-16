@@ -2,7 +2,8 @@
 
 setup:
 	python -m venv .venv && \
-	. .venv/bin/activate && $(MAKE) pip-install
+	. .venv/bin/activate && $(MAKE) pip-install && \
+	pre-commit install
 
 pip-install:
 	pip install -U pip && \

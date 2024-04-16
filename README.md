@@ -42,20 +42,24 @@ Each city is a key under the `Cities` section, and each has sub-keys for `Countr
 ## Setup Instructions
 
 ### Environment Setup
-1. Clone the repository.
-2. Ensure you have Python and Docker installed on your machine.
 
-### Dependency Installation
-Run the following command to install required Python packages:
-```bash
-make pip-install
-```
+To set up the project environment, follow these steps:
 
-### Setting up Pre-commit Hooks
-To install pre-commit hooks into your git hooks, run the following command:
-```bash
-pre-commit install
-```
+1. **Clone the repository.**
+   Make sure you have access to the repository and clone it to your local machine using:
+   ```bash
+   git clone https://github.com/gabrielclimb/openweatherdatacolllect.git
+   ```
+
+2. **Ensure you have Python and Docker installed.**
+   This project requires Python and Docker. Please install them from their official websites if they are not already installed on your machine.
+
+3. **Install required Python packages.**
+   Run the following command to set up the Python virtual environment and install all the required packages:
+   ```bash
+   make setup
+   ```
+
 
 ## Running the Application
 
