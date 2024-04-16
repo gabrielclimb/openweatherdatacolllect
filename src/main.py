@@ -15,6 +15,18 @@ API_KEY = os.getenv("API_KEY")
 
 
 def ingest_weather_data() -> None:
+    """
+    Ingests weather data for all cities into the database.
+
+    This function retrieves weather data for each city using the OpenWeather API
+    and stores it in the database. It iterates over all cities, retrieves the
+    weather data for each city, and creates a new `WeatherData` object with the
+    retrieved data. The `WeatherData` object is then added to the session and
+    committed to the database. Finally, it prints a success message for each city.
+
+    Returns:
+        None
+    """
     cities = get_all_cities()
     api_weather = OpenWeather(API_KEY)
     session = Session(engine)

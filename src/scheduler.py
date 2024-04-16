@@ -7,14 +7,21 @@ from src.db.operations import load_cities_from_yaml
 scheduler = sched.scheduler(time.time, time.sleep)
 
 
-def schedule_daily_task():
+def schedule_daily_task() -> None:
+    """
+    Schedule a daily task to ingest weather data.
+    """
+    daily_interval = 60 * 60 * 24
     date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-    scheduler.enter(10, 1, schedule_daily_task)
+    scheduler.enter(daily_interval, 1, schedule_daily_task)
     print(f"Ingesting weather data...{date}")
     ingest_weather_data()
 
 
-def start_scheduled_task():
+def start_scheduled_task() -> None:
+    """
+    Start the scheduled task to run daily.
+    """
     scheduler.enter(0, 1, schedule_daily_task)
     load_cities_from_yaml()
     try:
@@ -23,7 +30,10 @@ def start_scheduled_task():
         print("Stopped by user.")
 
 
-def signal_handler(signum, frame):
+def signal_handler(signum, frame) -> None:
+    """
+    Handle the signal interrupt from the user.
+    """
     print("Signal handler called with signal", signum)
     raise KeyboardInterrupt
 
